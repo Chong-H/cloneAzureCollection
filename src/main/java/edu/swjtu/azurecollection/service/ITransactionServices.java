@@ -8,6 +8,7 @@ public interface ITransactionServices {
     //find by id
     Transaction get(Long collectionId);
 
+    Transaction getCheck(Long collectionId);
 
     Transaction edit(TransactionDto transaction);
 

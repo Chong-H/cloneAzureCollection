@@ -1,0 +1,10 @@
+[network]
+peers = ["127.0.0.1:20200"]
+enableSSL = true
+
+[group]
+groupID = "group1"
+
+[cryptoMaterial]
+cryptoProvider = "standard"
+certPath = "conf"

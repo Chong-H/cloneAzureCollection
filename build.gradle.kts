@@ -14,11 +14,26 @@ java {
 }
 
 repositories {
+//    maven {
+//        url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
+//    }
+//    maven {
+//        url = uri("https://oss.sonatype.org/content/repositories/releases/")
+//    }
     maven {
-        url = uri("https://maven.aliyun.com/repository/public/")
+        url = uri("https://maven.aliyun.com/repository/public")// 阿里云公共仓库
     }
+    maven {
+        url = uri("https://maven.aliyun.com/repository/spring")// Spring 仓库（可选）
+    }
+    maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
     mavenCentral()
 }
+//repositories {
+//    maven { url 'https://maven.aliyun.com/repository/public' }   // 阿里云公共仓库
+//    maven { url 'https://maven.aliyun.com/repository/spring' }   // Spring 仓库（可选）
+//    mavenCentral()
+//}
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
@@ -30,7 +45,13 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
+    implementation ("org.fisco-bcos.java-sdk:fisco-bcos-java-sdk:2.9.1")
+    implementation ("jakarta.annotation:jakarta.annotation-api:2.1.1")
+
+//    implementation("org.fisco-bcos:web3sdk:2.9.1")
+
 }
+
 tasks.withType<Test> {
     useJUnitPlatform()
 }

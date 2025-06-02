@@ -32,6 +32,12 @@ public class TransactionController {
         Transaction newTrans=transactionServices.get(collectionId);
         return ResponseMessage.success(newTrans);
     }
+    //find by TransId
+    @GetMapping("/check/{transactionId}")
+    public ResponseMessage<Transaction> check(@PathVariable Long transactionId) {
+        Transaction newTrans=transactionServices.getCheck(transactionId);
+        return ResponseMessage.success(newTrans);
+    }
     //public ResponseEntity<Transaction> createTransaction(@RequestBody Transaction transaction) {}
 
     //change
